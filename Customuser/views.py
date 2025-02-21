@@ -64,3 +64,18 @@ def sayHello(request):
 
     print(request.user.email)
     return HttpResponse(request.user.email, status=200)
+
+
+
+# Case 1:
+# scaler - > google auth server -> pop up - email pass -> token_1
+#call google server to get user info..
+# once info recieved they create own token_2 and return to client...
+
+
+# CASE2: access resources..
+# Producet_service -> user service to get a token.. -> pop up - email pass -> token
+# make a call to user service with token.. to get info about this user...
+
+
+
