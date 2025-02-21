@@ -18,12 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 
 from oauth2_provider.views import TokenView
+from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user', include('Customuser.urls')),
 
-    path('o/', include('oauth2_provider.urls')),
+    path('o/',include('oauth2_provider.urls')),
 
-    path('token/', TokenView.as_view())
+    path('o/token', csrf_exempt(TokenView.as_view()))
 ]

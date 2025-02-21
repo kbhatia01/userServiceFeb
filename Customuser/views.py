@@ -61,7 +61,7 @@ class CustomTokenView(TokenObtainPairView):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def sayHello(request):
-
+    print("called")
     print(request.user.email)
     return HttpResponse(request.user.email, status=200)
 

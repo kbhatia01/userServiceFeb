@@ -45,8 +45,8 @@ INSTALLED_APPS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
         'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
 
     ),
     'DEFAULT_PERMISSION_CLASSES': (
@@ -143,7 +143,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_COOKIE_SECURE = False
 CORS_ALLOWED_ALLOWED_ORIGINS = True
 
-AUTH_USER_MODEL ='Customuser.User'
+# AUTH_USER_MODEL ='Customuser.User'
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=7),
@@ -155,4 +155,5 @@ OAUTH2_PROVIDER = {
     'REFRESH_TOKEN_EXPIRE_SECONDS': 86400,
     'GRANT_TYPE': ['password', 'authorization_code', 'refresh_token'],
     'AUTHORIZATION_CODE_EXPIRE_SECONDS': 300,
+
 }

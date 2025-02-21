@@ -16,7 +16,7 @@ class Roles(models.Model):
     name = models.CharField(max_length=50)
 
 
-class User(AbstractUser):
+class User(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=100, default="abc@123")
